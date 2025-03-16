@@ -1,2 +1,7 @@
-# simple-portfolio-hugo
-A simple Hugo theme for a personal portfolio.
+# Theme Name
+
+## Features
+
+## Installation
+
+## Configuration

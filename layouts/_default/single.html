@@ -1,16 +1,10 @@
 {{ define "main" }}
-	<main>
-		<article>
-			<h1>{{ .Title }}</h1>
-			{{ if .Page.Params.date }}<time datetime="{{ .Date.Format "2006-01-02T15:04:05" }}">{{ .Date.Format "January 2, 2006 3:04 PM" }}</time>{{ end }}
-			{{ with .Page.Params.summary }}<p class="page_summary">{{ . }}</p>{{ end }}
-			<hr>
-			<div>
-				{{ .Content }}
-			</div>
-			{{- if and ( $.Site.Params.giscus.enabled ) ( eq .Page.Type "posts" ) }}
-				{{ partial "comment.html" ( dict "giscus" $.Site.Params.giscus ) }}
-			{{- end }}
-		</article>
-	</main>
+  <h1>{{ .Title }}</h1>
+
+  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+  {{ $dateHuman := .Date | time.Format ":date_long" }}
+  <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+
+  {{ .Content }}
+  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 {{ end }}

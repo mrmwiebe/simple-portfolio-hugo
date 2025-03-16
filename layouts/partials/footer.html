@@ -1,18 +1,1 @@
-<footer>
-	{{- if .Site.Params.ccbysa }}
-	<div class="center"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img height="15" width="80" alt="Creative Commons License" src="{{ "/buttons/ccbysa.png" | relURL }}"></a><br></div>
-	{{- end }}
-	<span>&copy; {{ now.Year }} <a href="mailto:{{ .Site.Params.author.email }}">{{ .Site.Params.author.name }}.</a></span>
-	{{- if .Site.Params.ccbysa }}
-	<span>Content on this website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a> unless otherwise stated.</span>
-	{{- end }}
-	{{- with .Site.Params.goatcounter }}
-	<span>This website uses <a href="https://www.goatcounter.com/">GoatCounter</a> to track page views.</span>
-	{{- end }}
-	{{- if .Site.Params.themecred }}
-	<span>Made with <a href="https://gohugo.io/">Hugo</a> with a <a href="https://github.com/EricZhang456/blank">forked version of the blank theme</a>.</span>
-	{{- end }}
-	{{- if and ( eq .Page.Kind "page" ) ( eq .Page.Type "posts" ) ( $.Site.Params.giscus.enabled ) }}
-	<span>Comments system powered by <a href="https://giscus.app/">Giscus</a>. <a href="https://github.com/giscus/giscus/blob/main/PRIVACY-POLICY.md">[ Privacy policy ]</a></span>
-	{{- end }}
-</footer>
+<p>Copyright {{ now.Year }}. All rights reserved.</p>

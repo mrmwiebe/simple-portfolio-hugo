@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default "en-us" }}">
-{{ partial "head" . }}
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
 <body>
-	{{ partial "goatcounter" . }}
-	<div class="primary">
-		{{ partial "header" . }}
-		{{ block "main" . }}{{ end }}
-		{{ partial "footer" . }}
-	</div>
+  <header>
+    {{ partial "header.html" . }}
+  </header>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer>
+    {{ partial "footer.html" . }}
+  </footer>
 </body>
 </html>

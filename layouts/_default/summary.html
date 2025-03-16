@@ -1,0 +1,10 @@
+<article>
+	<h1 class="summary_page_title"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+	<time datetime="{{ .Date.Format "2006-01-02T15:04:05" }}">{{ .Date.Format "Jan. 2, 2006 3:04 PM" }}</time>
+	{{ range .Params.tags }}
+	{{ end }}
+	<div class="article_summary">
+		<span>{{ .Summary }}</span>
+		<span><a href="{{ .Permalink }}" class="read_more">Read more...</a></span>
+	</div>
+</article>

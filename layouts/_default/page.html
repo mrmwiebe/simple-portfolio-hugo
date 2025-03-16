@@ -1,0 +1,9 @@
+{{ define "main" }}
+	<main>
+		<article>
+			<div {{ if .Page.IsHome }} class="homepage" {{ end }}>
+				{{ .Content }}
+			</div>
+		</article>
+	</main>
+{{ end }}

@@ -13,7 +13,7 @@ $drop-shadow-size: 5px;
 
 $font-body: "Sofia Sans";
 $font-body-weight: 400;
-$font-display: "Rise";
+$font-display: Rise;
 
 @mixin font($font-name, $font-weight) {
     font-family: $font-name, sans-serif;
@@ -35,9 +35,8 @@ $font-display: "Rise";
 }
 
 @font-face { 
-    font-family: Rise; 
-    font-weight: 100;
-    src: url('/ChevyRayRise.ttf');
+    font-family: Rise;
+    src: url('/fonts/ChevyRay - Rise.ttf');
 } 
 
 html {
@@ -126,7 +125,7 @@ header {
     }
 }
 
-h1 a {
+h1 {
     @include font($font-display, 100);
     @include stroke($primary-color, $secondary-color, 2px);
     text-decoration: none;

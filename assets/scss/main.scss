@@ -1,0 +1,196 @@
+@import 'flexbox/main.scss';
+
+$primary-color: #445B63;
+$primary-color-shadow: #2b383d;
+$secondary-color: #A3C4BC;
+$link-color: #D9CFC1;
+
+$container-max-width: 1400px;
+$container-padding: 15px;
+
+$image-border-size: 5px;
+$drop-shadow-size: 5px;
+
+$font-body: "Sofia Sans";
+$font-body-weight: 400;
+$font-display: "Rise";
+
+@mixin font($font-name, $font-weight) {
+    font-family: $font-name, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: $font-weight;
+    font-style: normal;
+}
+
+@mixin container() {
+    max-width: $container-max-width;
+    padding-left: $container-padding;
+    padding-right: $container-padding;
+}
+
+@mixin stroke($fill-color, $stroke-color, $size) {
+    -webkit-text-stroke-width: $size;
+    -webkit-text-stroke-color: $stroke-color;
+    color: $fill-color;  
+}
+
+@font-face { 
+    font-family: Rise; 
+    font-weight: 100;
+    src: url('/ChevyRayRise.ttf');
+} 
+
+html {
+    background-color: $primary-color;
+}
+
+body {
+    color: $secondary-color;
+    @include font($font-body, $font-body-weight);
+    font-size: large;
+    line-height: 1.5;
+    margin: auto;
+}
+
+main {
+    @include container();
+    margin: auto;
+}
+
+header {
+    margin-bottom: 4rem;
+    padding-bottom: 1.2rem;
+    padding-top: 1.2rem;
+    background-color: $primary-color-shadow;
+    background-image: url("/clouds-clear.png");
+    background-position-y: center;
+
+    .header-container {
+        @include container();
+    }
+
+    * {
+        padding: 0 !important;
+
+    }
+
+    img {
+        border-radius: 50%;
+        max-width: 150px;
+    }
+
+    .title-nav-container {
+        
+        // Make sure everything is vertically centered
+        * {
+            vertical-align: middle;
+            line-height: normal;
+            align-content: center;
+            text-align: center;
+        }
+
+        .menu-container {
+            background-color: $secondary-color;
+
+            a {
+                color: $primary-color;
+                font-style: italic;
+            }
+        }
+
+        span {
+            color: $primary-color;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        h1 {
+            display: inline;
+            margin: 0;
+        }
+
+        nav {
+            display: inline-block;
+
+            ul {
+                margin: 0;
+            }
+
+            li {
+                display: inline;
+                list-style: none;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+}
+
+h1 a {
+    @include font($font-display, 100);
+    @include stroke($primary-color, $secondary-color, 2px);
+    text-decoration: none;
+}
+
+h2 {
+    @include font($font-display, 100);
+    font-size: 2rem;
+    background-color: $secondary-color;
+    line-height: normal;
+    box-shadow: $primary-color-shadow $drop-shadow-size $drop-shadow-size;
+
+    span {
+        background-color: $primary-color;
+        padding-bottom: 15px;
+        padding-right: 15px;
+        text-shadow: $primary-color-shadow $drop-shadow-size $drop-shadow-size;
+    }
+}
+
+h3 {
+    @include font($font-display, 100);
+    font-size: 1.5rem;
+}
+
+footer {
+    margin-top: 1rem;
+
+    img {
+        outline: none;
+        max-width: 200px;
+        margin: auto;
+    }
+}
+
+a {
+    @include font($font-body, 800);
+    color: $link-color;
+    text-decoration: underline;
+}
+
+img {
+    width: 100%;
+    outline:$image-border-size solid $secondary-color;
+    outline-offset:-$image-border-size; //keeping it inside
+}
+
+.list-row {
+    .list-item {
+        padding-bottom: 40px;
+
+        h3 {
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.single {
+    img {
+        max-height: 30%;
+    }
+
+    time {
+        position: relative;
+        bottom: 12px;
+    }
+}

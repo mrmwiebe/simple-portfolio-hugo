@@ -1,8 +1,21 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
+<div>
+  <h2><span>{{ .Title }}</span></h2>
   {{ .Content }}
+  <div class="list-row row">
   {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    <div class="list-item col-md-6 col-xs-12">
+      <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
+      
+      {{ if strings.Contains .Page.Params.img "http" }}
+      <img src="{{ .Page.Params.img }}">
+      {{ else }}
+      <img src="{{ .Page.Path }}/{{ .Page.Params.img }}">
+      {{ end }}
+
     {{ .Summary }}
+    </div>
   {{ end }}
+  </div>
+</div>
 {{ end }}

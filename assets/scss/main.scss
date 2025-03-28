@@ -1,9 +1,9 @@
 @import 'flexbox/main.scss';
 
-$primary-color: #445B63;
-$primary-color-shadow: #2b383d;
-$secondary-color: #A3C4BC;
-$link-color: #D9CFC1;
+$primary-color: #1B4F62;
+$primary-color-shadow: #0D3341;
+$secondary-color: #8BC8C8;
+$link-color: #EDC39D;
 
 $container-max-width: 1400px;
 $container-padding: 15px;
@@ -24,8 +24,6 @@ $font-display: Rise;
 
 @mixin container() {
     max-width: $container-max-width;
-    padding-left: $container-padding;
-    padding-right: $container-padding;
 }
 
 @mixin stroke($fill-color, $stroke-color, $size) {
@@ -36,7 +34,7 @@ $font-display: Rise;
 
 @font-face { 
     font-family: Rise;
-    src: url('/fonts/ChevyRay - Rise.ttf');
+    src: url('/fonts/ChevyRay - Stapler.ttf');
 } 
 
 html {
@@ -57,6 +55,7 @@ main {
 }
 
 header {
+
     margin-bottom: 4rem;
     padding-bottom: 1.2rem;
     padding-top: 1.2rem;
@@ -68,58 +67,56 @@ header {
         vertical-align: middle;
         line-height: normal;
         align-content: center;
-        text-align: center;
     }
 
     .header-container {
         @include container();
-        padding-left: 15px;
-        padding-right: 15px;
 
-        img {
-            border-radius: 50%;
+        .profile-pic {
+            
+            text-align: left;
+
+            & img {
+                border-radius: 50%;
+                max-width: 125px;
+            }
         }
 
-        * {
-            padding: 0 !important;
+        .menu-container {
+            display: inline;
+
+            a {
+                color: $secondary-color;
+                font-style: italic;
+            }
         }
 
-        .title-nav-container {
+        span {
+            color: $primary-color;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
 
-            .menu-container {
-                background-color: $secondary-color;
-                display: inline;
+        h1 {
+            display: inline;
 
-                a {
-                    color: $primary-color;
-                    font-style: italic;
-                }
+            & img {
+                max-width: 440px;
             }
+        }
 
-            span {
-                color: $primary-color;
-                margin-left: 10px;
-                margin-right: 10px;
-            }
+        nav {
+            display: inline-block;
 
-            h1 {
-                display: inline;
+            ul {
                 margin: 0;
             }
 
-            nav {
-                display: inline-block;
-
-                ul {
-                    margin: 0;
-                }
-
-                li {
-                    display: inline;
-                    list-style: none;
-                    margin-left: auto;
-                    margin-right: auto;
-                }
+            li {
+                display: inline;
+                list-style: none;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
     }
@@ -129,6 +126,12 @@ h1 {
     @include font($font-display, 100);
     @include stroke($primary-color, $secondary-color, 2px);
     text-decoration: none;
+    
+    a {
+        @include font($font-display, 100);
+        color: $primary-color;
+        text-decoration: none;
+    }
 }
 
 h2 {
@@ -169,8 +172,11 @@ a {
 
 img {
     width: 100%;
-    outline:$image-border-size solid $secondary-color;
-    outline-offset:-$image-border-size; //keeping it inside
+    
+    &.outline {
+        outline: $image-border-size solid $secondary-color;
+        outline-offset: -$image-border-size; //keeping it inside
+    }
 }
 
 .list-row {

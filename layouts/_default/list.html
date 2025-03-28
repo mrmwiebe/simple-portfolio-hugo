@@ -10,7 +10,7 @@
       {{ if strings.Contains .Page.Params.img "http" }}
       <img src="{{ .Page.Params.img }}">
       {{ else }}
-      <img src="{{ .Page.Path }}/{{ .Page.Params.img }}">
+      <img class="outline" src="{{ .Page.Path }}/{{ .Page.Params.img }}">
       {{ end }}
 
     {{ .Summary }}

@@ -1,12 +1,13 @@
 <div class="header-container row">
-    <img class="col-md-1 col-xs-2" src="/profile.png">
-    <div class="col-md-11 col-xs-10 row">
-        <div class="title-nav-container row">
-            <h1 class="col-sm-4 col-xs-7">{{ site.Title }}</h1>
-            <div class="col-sm-8 menu-container show-sm hide-xs">
-                <span>{{ partial "menu.html" (dict "menuID" "main" "page" .) }}</span>
-            </div>
-            <div class="col-xs-5 show-xs-only menu-container"></div>
-        </div>
+    <div class="col-md-6 col-xs-3 profile-pic">
+        <a href="/"><img class="outline" src="/profile.png"></a>
+        <h1 alt="{{ site.Title }}">
+            <a href="/">
+                <img src="/title.png">
+            </a>
+        </h1>
+    </div>
+    <div class="col-md-6 menu-container show-sm hide-xs">
+        <span>{{ partial "menu.html" (dict "menuID" "main" "page" .) }}</span>
     </div>
 </div>
